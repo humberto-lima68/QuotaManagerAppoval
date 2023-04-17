@@ -1,0 +1,43 @@
+[{
+	"Zchave": "20230314154900",
+	"Zsearch": "",
+	"ZzbrAtpskp": "CP 141 PL14",
+	"Kunn2": "AMartins",
+	"Zgcdoador": "Acetoze1",
+	"Uom": "Ton",
+	"BrQtdsolicitada": "10.000",
+	"Zqtddoada": "",
+	"Status": "S",
+	"Kunn2Name": "Ana Martins",
+	"ZgcdoadorName": "Antônio Luis Acetoze",
+	"Zuserid": "Acetoze1",
+	"NameSkup": "CP 141 PL14",
+	"Zusrsolicitacao": "AMartins",
+	"Zdtsolicitacao": "14.03.2023",
+	"Ztmsolicitacao": "",
+	"__metadata": {
+		"uri": "aprova_solicitacaoSet('Zchave%201')",
+		"type": "ZGW_APO_COTA_SRV.aprova_solicitacao"
+	}
+}, {
+	"Zchave": "20230314154959",
+	"Zsearch": "",
+	"ZzbrAtpskp": "CP 141 PL14",
+	"Kunn2": "PMarques",
+	"Zgcdoador": "Acetoze1",
+	"Uom": "Ton",
+	"BrQtdsolicitada": "15.000",
+	"Zqtddoada": "",
+	"Status": "S",
+	"Kunn2Name": "Pedro Marques",
+	"ZgcdoadorName": "Antônio Luís Acetoze",
+	"Zuserid": "Acetoze1",
+	"NameSkup": "CP 141 PL14",
+	"Zusrsolicitacao": "AMartins",
+	"Zdtsolicitacao": "14.03.2023",
+	"Ztmsolicitacao": "",
+	"__metadata": {
+		"uri": "aprova_solicitacaoSet('Zchave%202')",
+		"type": "ZGW_APO_COTA_SRV.aprova_solicitacao"
+	}
+}]

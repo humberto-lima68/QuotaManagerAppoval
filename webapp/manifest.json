@@ -1,0 +1,207 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "exed.com.quaotamanagerapproval",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "resources": "resources.json",
+        "dataSources": {
+            "mainService": {
+                "uri": "/here/goes/your/serviceurl/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        },
+        "sourceTemplate": {
+            "id": "sap.ui.ui5-template-plugin.2masterdetail",
+            "version": "1.105.4",
+            "toolsId": "387d67ad-dacd-4a0f-98cc-5b5f15615892"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://detail-view",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "exed.com.quaotamanagerapproval.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.66.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.f": {},
+                "sap.ushell": {},
+                "sap.collaboration": {
+                    "lazy": true
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "exed.com.quaotamanagerapproval.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.f.routing.Router",
+                "viewType": "XML",
+                "viewPath": "exed.com.quaotamanagerapproval.view",
+                "controlId": "layout",
+                "controlAggregation": "beginColumnPages",
+                "bypassed": {
+                    "target": "notFound"
+                },
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "master",
+                    "target": "master"
+                },
+                {
+                    "pattern": "zapo_acessoSet/{objectId}/{Zusersubst}",
+                    "name": "object",
+                    "target": [
+                        "master",
+                        "object"
+                    ]
+                },
+                {
+                    "name": "DetailAs",
+                    "pattern": "aprova_solicitacaoSet/{Zchave}/{sku}/{Zuserid}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "master",
+                        "DetailAs"
+                    ]
+                },
+                {
+                    "name": "ResumoAprovacao",
+                    "pattern": "resumoAprovacao/{Skup}/{Kunn2}/{Zchave}/{Zuserid}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "master",
+                        "ResumoAprovacao"
+                    ]
+                },
+                {
+                    "name": "AprovaSucesso",
+                    "pattern": "AprovarSucesso/{Skup}/{Kunn2}/{Zchave}/{Zuserid}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "master",
+                        "AprovaSucesso"
+                    ]
+                },
+                {
+                    "name": "RejeitarSucesso",
+                    "pattern": "ejeitarsucesso/{Skup}/{Kunn2}/{Zchave}/{Zuserid}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "master",
+                        "RejeitarSucesso"
+                    ]
+                }
+            ],
+            "targets": {
+                "master": {
+                    "viewName": "Master",
+                    "viewLevel": 1,
+                    "viewId": "master"
+                },
+                "object": {
+                    "viewName": "Detail",
+                    "viewId": "detail",
+                    "viewLevel": 1,
+                    "controlAggregation": "midColumnPages"
+                },
+                "detailObjectNotFound": {
+                    "viewName": "DetailObjectNotFound",
+                    "viewId": "detailObjectNotFound",
+                    "controlAggregation": "midColumnPages"
+                },
+                "notFound": {
+                    "viewName": "NotFound",
+                    "viewId": "notFound"
+                },
+                "DetailAs": {
+                    "viewType": "XML",
+                    "viewName": "DetailAs",
+                    "controlAggregation": "midColumnPages",
+                    "title": "DetailAs",
+                    "viewId": "DetailAs",
+                    "viewLevel": 1
+                },
+                "ResumoAprovacao": {
+                    "viewType": "XML",
+                    "viewName": "ResumoAprovacao",
+                    "controlAggregation": "midColumnPages",
+                    "title": "ResumoAprovacao",
+                    "viewId": "ResumoAprovacao",
+                    "viewLevel": 1
+                },
+                "AprovaSucesso": {
+                    "viewType": "XML",
+                    "viewName": "AprovaSucesso",
+                    "controlAggregation": "midColumnPages",
+                    "title": "AprovaSucesso",
+                    "viewId": "AprovaSucesso"
+                },
+                "RejeitasSucesso": {
+                    "viewType": "XML",
+                    "viewName": "RejeitasSucesso"
+                },
+                "RejeitarSucesso": {
+                    "viewType": "XML",
+                    "viewName": "RejeitarSucesso",
+                    "title": "RejeitarSucesso",
+                    "viewId": "RejeitarSucesso",
+                    "viewLevel": 1,
+                    "controlAggregation": "midColumnPages"
+                }
+            }
+        },
+        "flexEnabled": true
+    }
+}

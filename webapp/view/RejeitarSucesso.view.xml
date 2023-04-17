@@ -1,0 +1,55 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:semantic="sap.f.semantic" xmlns:html="http://www.w3.org/1999/xhtml" height="100%" controllerName="exed.com.quaotamanagerapproval.controller.RejeitarSucesso">
+	<semantic:SemanticPage id="mySemanticPage" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false" titleAreaShrinkRatio="1:1.6:1.6" showFooter="true">
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title id="_IDEGen_title0R" text="Request rejected"/>
+			<!--<ObjectStatus id="_IDEGen_objectstatus0" class="sapUiSmallMarginBottom" title="Successfully rejected" icon="sap-icon://sys-enter-2" state="Success"/>-->
+	 
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<layout:HorizontalLayout id="_IDEGen_horizontallayout0" allowWrapping="true">
+				<layout:VerticalLayout id="_IDEGen_verticallayout01" class="sapUiMediumMarginEnd">
+					<ObjectIdentifier id="_IDEGen_objectidentifier03" title="Requester"/>
+					<ObjectAttribute title="Account Manager" text="{Kunn2Name}" id="oli44"/>
+					<ObjectAttribute title="Material" text="{ZzbrAtpskp}" id="oli45"/>
+					<ObjectAttribute title="Quantity requested" text="{BrQtdsolicitada} {Uom}" id="oli46"/>
+				</layout:VerticalLayout>
+			</layout:HorizontalLayout>
+		</semantic:headerContent>
+		<!-- Content -->
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press="onVoltar"/>
+		</semantic:closeAction>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="Close" id="onAceitePress" press="onVoltar"/>
+		</semantic:positiveAction>
+		<!--<semantic:negativeAction>-->
+		<!--	<semantic:NegativeAction text="Close" press=".onCloseDetailPress"/>-->
+		<!--</semantic:negativeAction>-->
+		<semantic:messagesIndicator>
+			<semantic:MessagesIndicator press="onMessagesButtonPress"/>
+		</semantic:messagesIndicator>
+		<!-- Custom Footer Content-->
+		<semantic:content><Panel xmlns="sap.m" width="auto" expandable="true" id="panel1">
+				<VBox width="100%" direction="Column" id="vbox0" alignItems="Center">
+					    <items>
+					       <Image src="" id="idImgSucesso" width="50%" class="idImgSucesso"/>
+					    </items>
+					</VBox>
+				<headerToolbar>
+					<Toolbar id="toolbar3">
+						<Title id="_IDEGen_title0" text=" Successfully rejected"/>
+						<ToolbarSpacer id="_IDEGen_toolbarspacer0"/>
+						<!--<Button id="_IDEGen_button0" icon="sap-icon://settings"/>-->
+					</Toolbar>
+				</headerToolbar>
+				<content>
+				
+					<List headerText="" id="h1" class="listresumo3">
+						<ObjectListItem id="_IDEGen_objectlistitem0" intro="{Kunn2Name}" type="Active" title="{ZzbrAtpskp}" number="{BrQtdsolicitada} {Uom}"/>
+					</List>
+				</content>
+			</Panel>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>

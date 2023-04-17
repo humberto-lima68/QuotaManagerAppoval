@@ -1,0 +1,78 @@
+<mvc:View height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic" controllerName="exed.com.quaotamanagerapproval.controller.ResumoAprovacao"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<semantic:SemanticPage id="mySemanticPage" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false"
+		titleAreaShrinkRatio="1:1.6:1.6" showFooter="true">
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title id="_IDEGen_title0" text="Approval Summary"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<layout:HorizontalLayout id="_IDEGen_horizontallayout0" allowWrapping="true">
+				<layout:VerticalLayout id="_IDEGen_verticallayout0" class="sapUiMediumMarginEnd">
+					<ObjectIdentifier id="_IDEGen_objectidentifier01" title="Receiver"/>
+					<ObjectAttribute title="Account Manager" text="{Kunn2Name} " id="oli40"/>
+					<ObjectAttribute title="Material" text="{ZzbrAtpskp}" id="oli41"/>
+					<ObjectAttribute title="Quantity Requested" text="{BrQtdsolicitada} {Uom}" id="oli43"/>
+					<ObjectAttribute id="ObjectStatusMaster1" text="Requested on: {Zdtsolicitacao} {Ztmsolicitacao}"/>
+				</layout:VerticalLayout>
+			</layout:HorizontalLayout>
+		</semantic:headerContent>
+		<!-- Content -->
+		<semantic:content>
+			<Table id="tableResumoAprovacao" showSeparators="All" growing="true" growingScrollToLoad="true" items="{ path: '/cota_gcSet'}"
+				class="ColumnListItemResumo" updateFinished="onModelChange">
+				<headerToolbar>
+					<OverflowToolbar id="_IDEGen_overflowtoolbar0">
+						<Toolbar id="ToolbarResumo">
+							<Title text="Total Volume" titleStyle="H4" id="t3"/>
+							<ToolbarSpacer id="_IDEGen_toolbarspacer0"/>
+							<Text text="00.00 Ton" id="idTotal"/>
+						</Toolbar>
+						<content>
+							<ObjectIdentifier id="_IDEGen_text1" title="Request"/>
+						</content>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="_IDEGen_column0" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline"
+						mergeDuplicates="false"/>
+					<Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" popinDisplay="Inline" mergeDuplicates="true" demandPopin="true"
+						id="idColumnSaldo" visible="false"/>
+					<Column id="_IDEGen_column1" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline"
+						mergeDuplicates="true"/>
+					<Column id="_IDEGen_column2" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline"
+						mergeDuplicates="true" visible="false"/>
+				</columns>
+				<ColumnListItem id="_IDEGen_columnlistitem0">
+					<cells>
+						<ObjectIdentifier id="_IDEGen_objectidentifier0" title="{Kunnr} - {KunnrName}" text="{ZzbrAtpskp}" titleActive="false" visible="true"/>
+						<Text text="Saldo:{BrDisponivel}" width="auto" maxLines="1" wrapping="false" textAlign="Right" textDirection="Inherit" class="table1col4"
+							visible="false" id="idCellDisponivel"/>
+						<Input id="qtde" value="" placeholder="Volume in Ton" type="Number" enabled="true" visible="true" valueHelpOnly="false" required="true"
+							maxLength="13" editable="false" valueState="None"/>
+						<ObjectIdentifier id="_IDEGen_objectidentifier1" title="SAP: {Kunnr}" titleActive="false" visible="false"/>
+					</cells>
+				</ColumnListItem>
+			</Table>
+		</semantic:content>
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press=".onCloseDetailPress"/>
+		</semantic:closeAction>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="Confirm" id="onAceitePress1" press="onPressConfirma"/>
+		</semantic:positiveAction >
+		<semantic:negativeAction>
+			<semantic:NegativeAction text="Cancel" id="idCancelPress1" press="onPressRejeicao"/>
+		</semantic:negativeAction>
+		<semantic:messagesIndicator>
+			<semantic:MessagesIndicator/>
+		</semantic:messagesIndicator>
+		<!-- Custom Footer Content-->
+		
+	</semantic:SemanticPage>
+	<Text text="{Kunn2}" id="textkunn2" visible="false"/>
+					<Text text="{ZzbrAtpskp}" id="textskup" visible="false"/>
+					<Text text="{Zchave}" id="textzchave" visible="false"/>
+					<Text text="R" id="textstatus" visible="false"/>
+</mvc:View>

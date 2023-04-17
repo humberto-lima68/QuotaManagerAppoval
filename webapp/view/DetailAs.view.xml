@@ -1,0 +1,59 @@
+
+<mvc:View height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic" controllerName="exed.com.quaotamanagerapproval.controller.DetailAs"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<semantic:SemanticPage id="mySemanticPage" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false"
+		titleAreaShrinkRatio="1:1.6:1.6" showFooter="true">
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title id="_IDEGen_title0" text="Assessment"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<layout:HorizontalLayout id="_IDEGen_horizontallayout0" allowWrapping="true">
+				<layout:VerticalLayout id="_IDEGen_verticallayout0" class="sapUiMediumMarginEnd">
+					<ObjectAttribute title="Account Manager" text="{Kunn2Name} " id="oli40"/>
+					<ObjectAttribute title="Material" text="{ZzbrAtpskp}" id="oli41"/>
+					<ObjectAttribute title="Quantity Requested" text="{BrQtdsolicitada} {Uom}" id="oli43"/>
+					<ObjectAttribute id="ObjectStatusMaster1" text="Requested on: {Zdtsolicitacao} {Ztmsolicitacao}"/>
+				</layout:VerticalLayout>
+			</layout:HorizontalLayout>
+		</semantic:headerContent>
+		<!-- Content -->
+		<semantic:content>
+			<Table id="aslist" width="auto" noDataText="No data" showSeparators="All" growing="true" growingThreshold="30" growingScrollToLoad="true"
+				items="{ path: '/cota_gcSet'}" class="sapUiResponsiveMargin" itemPress="_onTableItemPress">
+				<columns>
+					<Column id="_IDEGen_column0" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"/>
+					<Column id="_IDEGen_column1" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true"/>
+					<Column id="_IDEGen_column2" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true"/>
+				</columns>
+				<ColumnListItem type="Active" press="handleLineItemPress" id="ColumnListItem">
+					<cells>
+						<ObjectIdentifier title="SAP: {Kunnr}" text="{KunnrName} {Ort01}-{Regio}" titleActive="false" visible="true"
+							id="ObjectIdentifierRemanejarKunnrName"/>
+						<ObjectIdentifier title="Sales plan free" text="{Zplvendalivre} {Uom}" titleActive="false" visible="true" id="ObjectIdentifierRemanejarKunnr"/>
+						<Input id="qtde" placeholder="Volume in Ton" enabled="true" maxLength="13" class="qtde" liveChange="onLiveChange"/>
+					</cells>
+				</ColumnListItem>
+			</Table>
+		</semantic:content>
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press=".onCloseDetailPress"/>
+		</semantic:closeAction>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="Confirm" id="onAceitePress" press="onPressContinuar"/>
+		</semantic:positiveAction >
+		<semantic:negativeAction>
+			<semantic:NegativeAction text="Reject" id="idCancelPress" press="onPressRejeicao"/>
+		</semantic:negativeAction>
+		<semantic:messagesIndicator>
+			<semantic:MessagesIndicator/>
+		</semantic:messagesIndicator>
+		<!-- Custom Footer Content-->
+		
+	</semantic:SemanticPage>
+	<Text text="{Kunn2}" id="textkunn2" visible="false"/>
+			<Text text="{ZzbrAtpskp}" id="textskup" visible="false"/>
+			<Text text="{Zchave}" id="textzchave" visible="false"/>
+			<Text text="R" id="textstatus" visible="false"/>
+</mvc:View>

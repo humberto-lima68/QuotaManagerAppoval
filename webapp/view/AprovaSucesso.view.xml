@@ -1,0 +1,73 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:semantic="sap.f.semantic" xmlns:html="http://www.w3.org/1999/xhtml" height="100%" controllerName="exed.com.quaotamanagerapproval.controller.AprovaSucesso">
+	<semantic:SemanticPage id="mySemanticPage" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false" titleAreaShrinkRatio="1:1.6:1.6" showFooter="true">
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title id="_IDEGen_title0A" text="Request approval"/>
+			<!--<ObjectStatus id="_IDEGen_objectstatus0" class="sapUiSmallMarginBottom" title="Successfully rejected" icon="sap-icon://sys-enter-2" state="Success"/>-->
+			<!--<ObjectStatus id="_IDEGen_objectstatus0" class="sapUiSmallMarginBottom" title="Request approval"/>-->
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<layout:HorizontalLayout id="_IDEGen_horizontallayout0" allowWrapping="true">
+				<layout:VerticalLayout id="_IDEGen_verticallayout01" class="sapUiMediumMarginEnd">
+					<ObjectIdentifier id="_IDEGen_objectidentifier03" title="Requester"/>
+					<ObjectAttribute title="Account Manager" text="{Kunn2Name}" id="oli44"/>
+					<ObjectAttribute title="Material" text="{ZzbrAtpskp}" id="oli45"/>
+					<ObjectAttribute title="Quantity requested" text="{BrQtdsolicitada} {Uom}" id="oli46"/>
+				</layout:VerticalLayout>
+			</layout:HorizontalLayout>
+		</semantic:headerContent>
+		<!-- Content -->
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press="onVoltar"/>
+		</semantic:closeAction>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="Close" id="onAceitePress" press="onVoltar"/>
+		</semantic:positiveAction>
+		<!--<semantic:negativeAction>-->
+		<!--	<semantic:NegativeAction text="Close" press=".onCloseDetailPress"/>-->
+		<!--</semantic:negativeAction>-->
+		<semantic:messagesIndicator>
+			<semantic:MessagesIndicator press="onMessagesButtonPress"/>
+		</semantic:messagesIndicator>
+		<!-- Custom Footer Content-->
+		<semantic:content>
+			<Panel xmlns="sap.m" width="auto" id="panel1" expandable="true">
+				<VBox width="100%" direction="Column" id="vbox0" alignItems="Center">
+					<items>
+						<Image src="" id="idImgSucesso1" width="50%" class="idImgSucesso"/>
+					</items>
+				</VBox>
+				<headerToolbar>
+					<Toolbar id="toolbar3">
+						<Title id="_IDEGen_title0" text=" Successfully approval"/>
+						<ToolbarSpacer id="_IDEGen_toolbarspacer0"/>
+						<!--<Button id="_IDEGen_button0" icon="sap-icon://settings"/>-->
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<Table id="listSucesso" items="{/sucesso}">
+						<columns>
+							<Column id="_IDEGen_column0" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"/>
+							<Column id="_IDEGen_column1" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="true"/>
+							<Column id="_IDEGen_column2" visible="false" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="true"/>
+						</columns>
+						<items>
+							<ColumnListItem id="_IDEGen_columnlistitem0" type="Active" press="handleLineItemPress">
+								<cells>
+									<ObjectIdentifier id="_IDEGen_objectidentifier0" title="{Kunnr} - {KunnrName}" text="{Ort01}-{Regio}" titleActive="false" visible="true"/>
+									<Input id="qtde2" value="{Qtde}" placeholder="Volume in Ton" enabled="true" visible="true" valueHelpOnly="false" required="true" maxLength="13" editable="false"/>
+									<ObjectIdentifier id="_IDEGen_objectidentifier1" title="SAP: {Kunnr}" titleActive="false" visible="false"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<Toolbar id="_IDEGen_toolbar0" class="backgroundWhite">
+												<Text text="Total Volume" id="t3"/>
+												<ToolbarSpacer id="_IDEGen_toolbarspacer1"/>
+												<Text text="00.00 Ton" id="idTotal"/>
+											</Toolbar>
+				</content>
+			</Panel>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>
